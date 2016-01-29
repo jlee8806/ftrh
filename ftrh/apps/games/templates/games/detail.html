@@ -1,0 +1,66 @@
+{% extends 'games/base.html' %}
+{% block head %}{{instance.title}} | {{ block.super}} {% endblock head %}
+
+
+{% block content %}
+<a href='/games/'>Return to game list!</a>
+<h1>{{title}} <small>{{instance.created_at}}</small></h1>
+
+
+<div id='header'>
+	<div class='info'>{% if instance.image %}
+<img src='{{instance.image.url}}' class='img-responsive' />
+{% endif %}
+</div>
+<div class='info'>
+	<iframe width="500" height="400" src="{{instance.video}}" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+</div>
+<br>
+<fieldset><legend>Game Specs</legend>
+<table class ='table table-bordered fixed'>
+	<thead>
+		<tr>
+			<th>Linearity</th>
+			<th>Replayability</th>
+			<th>Learning Curve</th>
+			<th>Story</th>
+			<th>Music</th>
+			<th>Graphic Dependency</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{instance.linearity}}</td>
+			<td>{{instance.replayability}}</td>
+			<td>{{instance.learning_curve}}</td>
+			<td>{{instance.story}}</td>
+			<td>{{instance.sound}}</td>
+			<td>{{instance.graphic_dependency}}</td>
+		</tr>
+	</tbody>
+</table>
+</fieldset>
+
+<fieldset><legend>User Review</legend>
+<table class='table table-bordered fixed'><thead><tr><td>{{instance.review|linebreaks}}</td></tr></thead></table>
+</fieldset>
+
+
+
+
+<!-- Title: {{instance.title}}<br>
+Linearity: {{instance.linearity}}<br>
+Replayability: {{instance.replayability}}<br>
+Learning Curve: {{instance.learning_curve}}<br>
+Story: {{instance.story}}<br>
+Music/Voice Acting: {{instance.sound}}<br>
+Graphic Dependency: {{instance.graphic_dependency}}<br>
+User Review: {{instance.review}}<br>
+Date Submitted: {{instance.created_at}}<br>
+ -->
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+h1{
+	color: hotpink;
+}
+h2{
+	color: hotpink;
+}
+body{
+	/*background-image: url('../imgs/18.jpg');*/
+	background-color: #1B2838;
+}
+*{
+	/*font-weight: bold;*/
+	color: orange;
+}
+legend{
+	color: orange;
+}
+a{
+	color: green;
+}
+table.fixed{
+	table-layout: fixed;
+
+}
+p{
+	word-wrap:break-word;
+}
+.info{
+	display: inline-block;
+}
